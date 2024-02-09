@@ -1,3 +1,9 @@
+import MasterPage from "../../components/masterpage/Masterpage.component";
+
 export function HomeRoute() {
-  return <div>Hello World</div>;
+  return (
+    <MasterPage>
+      <div>Hello World</div>
+    </MasterPage>
+  );
 }

@@ -1,1 +1,1 @@
-export {};
+export * from "./masterpage/Masterpage.component";
