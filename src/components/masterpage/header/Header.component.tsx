@@ -4,13 +4,24 @@ import { Menubar } from 'primereact/menubar';
 import { MenuItem } from 'primereact/menuitem';
 import 'primereact/resources/primereact.min.css';
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 export const HeaderComponent: React.FC = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
+  // Custom template for menu items
+  const itemTemplate = (item: MenuItem, options: any) => {
+    return (
+      <Link to={item.url || '#'} className={options.className} style={options.style} role={options.role}>
+        {item.icon && <span className={item.icon} />}
+        <span>{item.label}</span>
+      </Link>
+    );
+  };
+
   const items: MenuItem[] = [
-    { label: 'Home', icon: 'pi pi-fw pi-home', url: '/' },
-    { label: 'Users', icon: 'pi pi-fw pi-list', url: '/users' },
+    { label: 'Home', icon: 'pi pi-fw pi-home', url: '/', template: itemTemplate },
+    { label: 'Users', icon: 'pi pi-fw pi-list', url: '/users', template: itemTemplate },
   ];
 
   const start = 'Logo Here';
