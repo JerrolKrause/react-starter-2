@@ -1,4 +1,4 @@
-import MasterPage from "../../components/masterpage/Masterpage.component";
+import MasterPage from '../../components/masterpage/Masterpage.component';
 
 export function HomeRoute() {
   return (

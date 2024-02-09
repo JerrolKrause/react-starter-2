@@ -1,12 +1,7 @@
-import { Helmet, HelmetProvider } from "react-helmet-async";
-import {
-  NavLink,
-  Route,
-  BrowserRouter as Router,
-  Routes,
-} from "react-router-dom";
-import "./App.css";
-import { HomeRoute } from "./routes/home/Home.route";
+import { Helmet, HelmetProvider } from 'react-helmet-async';
+import { NavLink, Route, BrowserRouter as Router, Routes } from 'react-router-dom';
+import './App.css';
+import { HomeRoute } from './routes/home/Home.route';
 
 function App() {
   return (
@@ -14,10 +9,7 @@ function App() {
       <HelmetProvider>
         <Helmet>
           <title>React Starter App - Home</title>
-          <meta
-            name="description"
-            content="Starter Application for React projects"
-          />
+          <meta name="description" content="Starter Application for React projects" />
         </Helmet>
       </HelmetProvider>
       <NavLink to="/">Home</NavLink>

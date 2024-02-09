@@ -11,7 +11,8 @@
     "standard-jsx",
     "eslint:recommended",
     "plugin:jest/recommended",
-    "plugin:@typescript-eslint/recommended"
+    "plugin:@typescript-eslint/recommended",
+    "prettier"
   ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
@@ -22,22 +23,21 @@
     "ecmaVersion": 11,
     "sourceType": "module"
   },
-  "plugins": ["react", "jest", "@typescript-eslint"],
+  "plugins": ["react", "jest", "@typescript-eslint", "prettier"],
   "rules": {
-    "indent": [1, 2],
-    "linebreak-style": [1, "unix"],
-    "quotes": [1, "single"],
-    "semi": [1, "never"],
-    "one-var": "off",
-    "react/jsx-no-bind": "off",
-    "react/jsx-boolean-value": "off",
-    "jsx-a11y/href-no-hash": "off",
-    "camelcase": "off",
-    "react/react-in-jsx-scope": "off",
-    "react/jsx-closing-tag-location": "off",
-    "react/jsx-fragments": "off",
-    "react/jsx-closing-bracket-location": "off",
-    "no-comma-dangle": "off"
+    // Customizes specific rules
+    "indent": ["warn", 2], // Enforces a 2-space indent
+    "linebreak-style": ["warn", "unix"], // Enforces Unix linebreaks
+    "quotes": ["warn", "single"], // Enforces the use of single quotes
+    "semi": ["warn", "always"], // Requires semicolons at the end of statements
+    "@typescript-eslint/no-unused-vars": ["warn"], // Warns about unused variables
+    "react/jsx-filename-extension": [1, { "extensions": [".tsx"] }], // Allows jsx syntax in .tsx files
+    "react/react-in-jsx-scope": "off", // Turns off the rule for having React in scope with JSX (for React 17+)
+    "react/prop-types": "off", // Turns off prop-types rule (use TypeScript types instead)
+    "no-console": "warn", // Warns about console statements
+    "react-hooks/rules-of-hooks": "error", // Checks rules of Hooks
+    "react-hooks/exhaustive-deps": "warn", // Checks effect dependencies
+    "prettier/prettier": "error"
   },
   "settings": {
     "react": {

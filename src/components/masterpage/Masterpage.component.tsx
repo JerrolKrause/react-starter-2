@@ -1,5 +1,5 @@
-import React, { ReactNode } from "react";
-import styles from "./Masterpage.component.module.scss";
+import React, { ReactNode } from 'react';
+import styles from './Masterpage.component.module.scss';
 
 interface MasterPageProps {
   children: ReactNode;
