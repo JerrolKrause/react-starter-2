@@ -1,5 +1,6 @@
 import React, { ReactNode } from 'react';
 import styles from './Masterpage.component.module.scss';
+import { HeaderComponent } from './header/Header.component';
 
 interface MasterPageProps {
   children: ReactNode;
@@ -18,7 +19,7 @@ interface MasterPageProps {
 const MasterPage: React.FC<MasterPageProps> = ({ children }) => {
   return (
     <div className={styles.masterpage}>
-      <header>{/* Header content goes here */}</header>
+      <HeaderComponent />
       <main>{children}</main>
       <footer>{/* Footer content goes here */}</footer>
     </div>

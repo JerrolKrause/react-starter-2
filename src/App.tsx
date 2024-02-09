@@ -1,23 +1,28 @@
+import { PrimeReactProvider } from 'primereact/api';
 import { Helmet, HelmetProvider } from 'react-helmet-async';
-import { NavLink, Route, BrowserRouter as Router, Routes } from 'react-router-dom';
-import './App.css';
+import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
+import './App.scss';
+
 import { HomeRoute } from './routes/home/Home.route';
+import { UsersRoute } from './routes/users/Users.route';
 
 function App() {
   return (
-    <Router>
-      <HelmetProvider>
-        <Helmet>
-          <title>React Starter App - Home</title>
-          <meta name="description" content="Starter Application for React projects" />
-        </Helmet>
-      </HelmetProvider>
-      <NavLink to="/">Home</NavLink>
-      <NavLink to="/users">Users</NavLink>
-      <Routes>
-        <Route path="/" element={<HomeRoute />} />
-      </Routes>
-    </Router>
+    <PrimeReactProvider>
+      <Router>
+        <HelmetProvider>
+          <Helmet>
+            <title>React Starter App - Home</title>
+            <meta name="description" content="Starter Application for React projects" />
+          </Helmet>
+        </HelmetProvider>
+
+        <Routes>
+          <Route path="/" element={<HomeRoute />} />
+          <Route path="/users" element={<UsersRoute />} />
+        </Routes>
+      </Router>
+    </PrimeReactProvider>
   );
 }
 

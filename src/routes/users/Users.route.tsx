@@ -1,3 +1,9 @@
-export function UsersRoute() {
-  return <div>Users Route</div>;
-}
+import MasterPage from '../../components/masterpage/Masterpage.component';
+
+export const UsersRoute = () => {
+  return (
+    <MasterPage>
+      <div>Users Route</div>
+    </MasterPage>
+  );
+};
