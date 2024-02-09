@@ -34,5 +34,9 @@ export const HeaderComponent: React.FC = () => {
     />
   );
 
-  return <Menubar model={items} start={start} end={end} />;
+  return (
+    <div className="mb-3">
+      <Menubar model={items} start={start} end={end} />
+    </div>
+  );
 };

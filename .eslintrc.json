@@ -37,7 +37,7 @@
     "no-console": "warn", // Warns about console statements
     "react-hooks/rules-of-hooks": "error", // Checks rules of Hooks
     "react-hooks/exhaustive-deps": "warn", // Checks effect dependencies
-    "prettier/prettier": "error"
+    "prettier/prettier": "warn"
   },
   "settings": {
     "react": {
