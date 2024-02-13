@@ -1,1 +1,1 @@
-export {};
+export * from './models/global.models';

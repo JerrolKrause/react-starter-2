@@ -26,18 +26,21 @@
   "plugins": ["react", "jest", "@typescript-eslint", "prettier"],
   "rules": {
     // Customizes specific rules
-    "indent": ["warn", 2], // Enforces a 2-space indent
+    "indent": ["warn", 2, { "ignoredNodes": ["TemplateLiteral"] }],
     "linebreak-style": ["warn", "unix"], // Enforces Unix linebreaks
     "quotes": ["warn", "single"], // Enforces the use of single quotes
     "semi": ["warn", "always"], // Requires semicolons at the end of statements
     "@typescript-eslint/no-unused-vars": ["warn"], // Warns about unused variables
+    "@typescript-eslint/no-empty-function": ["warn"], // Warns about empty functions
+    "@typescript-eslint/prefer-namespace-keyword": "off",
+    "@typescript-eslint/no-namespace": "off",
     "react/jsx-filename-extension": [1, { "extensions": [".tsx"] }], // Allows jsx syntax in .tsx files
     "react/react-in-jsx-scope": "off", // Turns off the rule for having React in scope with JSX (for React 17+)
     "react/prop-types": "off", // Turns off prop-types rule (use TypeScript types instead)
     "no-console": "warn", // Warns about console statements
     "react-hooks/rules-of-hooks": "error", // Checks rules of Hooks
     "react-hooks/exhaustive-deps": "warn", // Checks effect dependencies
-    "prettier/prettier": "warn"
+    "prettier/prettier": ["warn", { "endOfLine": "auto" }]
   },
   "settings": {
     "react": {
