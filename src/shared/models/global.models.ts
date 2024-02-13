@@ -13,6 +13,12 @@ export module Models {
     orange,
   }
 
+  export interface ApiState<t = any> {
+    data: t | null;
+    loading: boolean;
+    error: any;
+  }
+
   export interface User {
     id: number;
     name?: string;
