@@ -1,9 +1,11 @@
 {
+  "parser": "@typescript-eslint/parser",
   "env": {
     "browser": true,
     "commonjs": true,
     "es6": true,
-    "jest/globals": true
+    "jest/globals": true,
+    "jest": true
   },
   "extends": [
     "standard",
@@ -14,7 +16,6 @@
     "plugin:@typescript-eslint/recommended",
     "prettier"
   ],
-  "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "ecmaFeatures": {
       "jsx": true,
@@ -23,28 +24,37 @@
     "ecmaVersion": 11,
     "sourceType": "module"
   },
-  "plugins": ["react", "jest", "@typescript-eslint", "prettier"],
+  "plugins": ["react", "jest", "react-hooks", "@typescript-eslint"],
   "rules": {
-    // Customizes specific rules
-    "indent": ["warn", 2, { "ignoredNodes": ["TemplateLiteral"] }],
-    "linebreak-style": ["warn", "unix"], // Enforces Unix linebreaks
-    "quotes": ["warn", "single"], // Enforces the use of single quotes
-    "semi": ["warn", "always"], // Requires semicolons at the end of statements
-    "@typescript-eslint/no-unused-vars": ["warn"], // Warns about unused variables
-    "@typescript-eslint/no-empty-function": ["warn"], // Warns about empty functions
-    "@typescript-eslint/prefer-namespace-keyword": "off",
-    "@typescript-eslint/no-namespace": "off",
-    "react/jsx-filename-extension": [1, { "extensions": [".tsx"] }], // Allows jsx syntax in .tsx files
-    "react/react-in-jsx-scope": "off", // Turns off the rule for having React in scope with JSX (for React 17+)
-    "react/prop-types": "off", // Turns off prop-types rule (use TypeScript types instead)
-    "no-console": "warn", // Warns about console statements
-    "react-hooks/rules-of-hooks": "error", // Checks rules of Hooks
-    "react-hooks/exhaustive-deps": "warn", // Checks effect dependencies
-    "prettier/prettier": ["warn", { "endOfLine": "auto" }]
+    "quotes": ["error", "single"],
+    "no-unused-vars": "off",
+    "spaced-comment": "off",
+    "one-var": "off",
+    "dot-notation": "off",
+    "react/self-closing-comp": "off",
+    "react/jsx-no-bind": "off",
+    "react/jsx-boolean-value": "off",
+    "jsx-a11y/href-no-hash": "off",
+    "react/no-unused-prop-types": "off",
+    "react/prop-types": "off",
+    "camelcase": "off",
+    "react/react-in-jsx-scope": "off",
+    "react/jsx-closing-tag-location": "off",
+    "react/jsx-fragments": "off",
+    "react/jsx-closing-bracket-location": "off",
+    "no-comma-dangle": "off"
   },
   "settings": {
     "react": {
       "version": "16.13.1"
     }
-  }
+  },
+  "overrides": [
+    {
+      "files": ["*.ts"],
+      "rules": {
+        "no-undef": "off"
+      }
+    }
+  ]
 }

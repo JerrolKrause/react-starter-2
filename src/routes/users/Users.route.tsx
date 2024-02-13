@@ -1,18 +1,12 @@
+import { ApiState } from '$components';
 import axios from 'axios';
 import { Column } from 'primereact/column';
 import { DataTable } from 'primereact/datatable';
 import { useCallback, useEffect, useState } from 'react';
-import { ApiState } from '../../components';
 import MasterPage from '../../components/masterpage/Masterpage.component';
 import { Models } from '../../shared';
 
-interface State<t = any> {
-  data: t | null;
-  loading: boolean;
-  error: unknown | null;
-}
-
-const initialState: State<Models.User[]> = {
+const initialState: Models.ApiState<Models.User[]> = {
   data: null,
   loading: false,
   error: null,

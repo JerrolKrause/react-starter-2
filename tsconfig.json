@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "baseUrl": ".",
     "target": "es5",
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
@@ -19,8 +20,10 @@
     "noEmit": true,
     "jsx": "react-jsx",
     "paths": {
-      "$components": ["./src/app/components"],
-      "$shared": ["./src/app/shared"],
+      "$components": ["./src/components"],
+      "$components/*": ["./src/components/*"],
+      "$shared": ["./src/shared"],
+      "$shared/*": ["./src/shared/*"],
       "$env": ["./src/environments/environment.ts"]
     }
   },
